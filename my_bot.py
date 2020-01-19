@@ -59,4 +59,4 @@ async def on_ready():
 
     print('Bot Is Ready')
 
-client.run('NjY0NzgyNTkwNzk1OTcyNjE4.XhcF9w.THuG4aZMMNqQEl5-Jwgo5a8oDJ0')   
+client.run(BOT_TOKEN)   
