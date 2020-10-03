@@ -49,9 +49,7 @@ class MyClient(discord.Client):
 
        
            
-       
-
-
+     
 if __name__ == '__main__':
     client = MyClient()
     @client.event
@@ -60,3 +58,4 @@ if __name__ == '__main__':
         print('Bot Is Ready')
         
     client.run(BOT_TOKEN)  
+
