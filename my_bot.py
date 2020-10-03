@@ -20,42 +20,43 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
 
-        if message.content.startswith('happy') or message.content.startswith('Happy') or message.content.startswith('HAPPY'):
-            await message.channel.send('Aye sir!'.format(message))
+        if message .content.lower().startswith('happy'):
+            await message.channel.send('Aye sir!')
        
-        elif message.content.startswith("Let's") or message.content.startswith("let's"):
-            await message.channel.send('Aye sir!'.format(message))
+        elif message .content.lower().startswith("let's") or message .content.lower().startswith("lets"):
+            await message.channel.send('Aye sir!)
        
-        elif 'Haha' in message.content or 'HAHA' in message.content or 'haha' in message.content:
-            await message.channel.send("LOL 😂️".format(message))     
+        elif 'haha' in message.content.lower():# or 'HAHA' in message.content or 'haha' in message.content:
+            await message.channel.send("THAT's FUNNY!😂️")     
 
-        elif 'sad'  in message.content or 'Sad'  in message.content or 'SAD'  in message.content:
-            await message.channel.send('Dont be sad, be Happy!'.format(message))
+        elif 'sad' in message.content.lower():
+            await message.channel.send('Dont be sad, be Happy!')
 
-        elif 'Oop'  in message.content or 'oop'  in message.content or 'OOP'  in message.content:
-            await message.channel.send('Sksksksk'.format(message))
+        elif message.content.lower().startswith('oop') or ' oop' in message.content.lower():
+            await message.channel.send('Sksksksk (>o<)')
 
-        elif 'ÓwÒ'  in message.content or 'ówò'  in message.content in message.content:
-            await message.channel.send('UwU'.format(message))   
+        elif 'ówò'  in message.content.lower():
+            await message.channel.send('UwU')   
         
-        elif 'yeet'  in message.content or 'Yeet'  in message.content or 'YEET'  in message.content:
-            await message.channel.send('YEET'.format(message))
+        elif 'yeet'  in message.content.lower():
+            await message.channel.send('YEET')
         
-        elif 'goog'  in message.content or 'Goog'  in message.content or 'GOOG'  in message.content:
-            await message.channel.send('goog jog'.format(message))
+        elif 'goog'  in message.content.lower():
+            await message.channel.send('goog jog')
         
-        elif "I'm new"  in message.content or "i'm new"  in message.content or 'i am new'  in message.content:
-            await message.channel.send('Hello and welcome to Chill Corner! :)'.format(message))
+        elif "i'm new"  in message.content.lower() or "i am new"  in message.content.lower():
+            await message.channel.send('Hello and welcome to the SERVER :)')
 
+       
            
        
 
 
-client = MyClient()
-@client.event
-async def on_ready():
-    await client.change_presence(activity=discord.Game(name="Catch The Fish 🐟️"))
-
-    #print('Bot Is Ready')
-
-client.run(TOKEN_HERE)   
+if __name__ == '__main__':
+    client = MyClient()
+    @client.event
+    async def on_ready():
+        await client.change_presence(activity=discord.Game(name="Catch The Fish 🐟️"))
+        print('Bot Is Ready')
+        
+    client.run(BOT_TOKEN)  
